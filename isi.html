@@ -1,0 +1,66 @@
+<html><style>body{overflow: hidden; /* Hide scrollbars */}body{margin:0px;background-color:black;color:white}#token{ padding-left:130px;font-family:Calibri;margin:auto;font-size:300px;text-align:left}</style><body onload="gov()"><div id="token">
+
+
+
+
+
+
+
+
+AKHLG
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div id="suara"></div>
+ 
+<script>
+var ch = new BroadcastChannel('tes')
+ var  data= document.getElementById('token').innerText;
+   var gabb='';
+   for (var i=0;i<data.length;i++){gabb+=' ,.'+data.substr(i,1)}
+   
+   ch.postMessage(gabb)
+//https://code.responsivevoice.org/getvoice.php?t=tess&tl=id&sv=g3&vn=&pitch=0.5&rate=0.377&vol=1&key=FQ9r4hgY&gender=male
+  var lod=0;
+  
+
+   ulang();
+function ulang(){
+             setTimeout(function(){   
+                        lod++
+
+              if (lod>=12) {    
+                               
+                            lod=0; 
+                                window.location.reload();return false
+                                
+                                 
+                             }
+              ulang()
+             },500)            
+             }
+
+
+
+
+function gov(){
+document.getElementById("suara").innerHTML=""
+var ss="<iframe src='https://code.responsivevoice.org/getvoice.php?t=tess&tl=id&sv=g3&vn=&pitch=0.5&rate=0.377&vol=1&key=FQ9r4hgY&gender=male'></iframe>"
+
+
+
+}
+</script>
+</body>
+</html>
+
